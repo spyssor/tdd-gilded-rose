@@ -15,4 +15,14 @@ public class CommodityTest {
         commodity.save(days);
         assertEquals(0, commodity.getQuality());
     }
+
+    @Test
+    void should_decrease_at_double_speed_when_days_beyond_shelf_life() {
+        int shelfLife = 0;
+        int quality = 10;
+        int days = 5;
+        Commodity commodity = new Commodity(shelfLife, quality);
+        commodity.save(days);
+        assertEquals(0, commodity.getQuality());
+    }
 }
