@@ -46,5 +46,33 @@ public class CommodityTest {
         assertEquals(10, sulfuras.getQuality());
     }
 
+    @Test
+    void should_backstage_pass_value_increase_2_per_day_when_10_days_before_the_show() {
+        int sellIn = 15;
+        int quality = 10;
+        int days = 10;
+        BackstagePass backstagePass = new BackstagePass(sellIn, quality);
+        backstagePass.save(days);
+        assertEquals(25, backstagePass.getQuality());
+    }
 
+    @Test
+    void should_backstage_pass_value_increase_3_per_day_when_5_days_before_the_show() {
+        int sellIn = 15;
+        int quality = 10;
+        int days = 15;
+        BackstagePass backstagePass = new BackstagePass(sellIn, quality);
+        backstagePass.save(days);
+        assertEquals(40, backstagePass.getQuality());
+    }
+
+    @Test
+    void should_backstage_pass_value_equals_0_when_after_the_show() {
+        int sellIn = 15;
+        int quality = 10;
+        int days = 20;
+        BackstagePass backstagePass = new BackstagePass(sellIn, quality);
+        backstagePass.save(days);
+        assertEquals(0, backstagePass.getQuality());
+    }
 }

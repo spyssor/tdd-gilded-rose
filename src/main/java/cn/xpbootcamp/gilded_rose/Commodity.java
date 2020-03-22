@@ -10,6 +10,10 @@ public class Commodity {
         this.quality = quality;
     }
 
+    public int getSellIn() {
+        return sellIn;
+    }
+
     public int getQuality() {
         return quality;
     }
