@@ -35,4 +35,14 @@ public class CommodityTest {
         agedBrie.save(days);
         assertEquals(50, agedBrie.getQuality());
     }
+
+    @Test
+    void should_sulfuras_value_never_changed() {
+        int shelfLife = 3;
+        int quality = 10;
+        int days = 50;
+        Sulfuras sulfuras = new Sulfuras(shelfLife, quality);
+        sulfuras.save(days);
+        assertEquals(10, sulfuras.getQuality());
+    }
 }
