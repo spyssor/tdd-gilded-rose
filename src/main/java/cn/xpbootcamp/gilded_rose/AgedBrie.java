@@ -2,8 +2,8 @@ package cn.xpbootcamp.gilded_rose;
 
 
 public class AgedBrie extends Commodity{
-    public AgedBrie(int shelfLife, int quality) {
-        super(shelfLife, quality);
+    public AgedBrie(int sellIn, int quality) {
+        super(sellIn, quality);
     }
 
     public void save(int days) {

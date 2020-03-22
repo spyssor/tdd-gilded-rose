@@ -2,11 +2,11 @@ package cn.xpbootcamp.gilded_rose;
 
 public class Commodity {
 
-    private int shelfLife;
+    private int sellIn;
     private int quality;
 
-    public Commodity(int shelfLife, int quality) {
-        this.shelfLife = shelfLife;
+    public Commodity(int sellIn, int quality) {
+        this.sellIn = sellIn;
         this.quality = quality;
     }
 
@@ -21,11 +21,11 @@ public class Commodity {
     public void save(int days) {
         int normalReduceValue;
         int doubleReduceValue = 0;
-        if (days <= this.shelfLife) {
+        if (days <= this.sellIn) {
             normalReduceValue = days;
         } else {
-            normalReduceValue = this.shelfLife;
-            doubleReduceValue = (days - this.shelfLife) * 2;
+            normalReduceValue = this.sellIn;
+            doubleReduceValue = (days - this.sellIn) * 2;
         }
 
         int checkedQuality = this.quality - normalReduceValue - doubleReduceValue;
