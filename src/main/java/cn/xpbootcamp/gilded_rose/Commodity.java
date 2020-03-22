@@ -14,6 +14,10 @@ public class Commodity {
         return quality;
     }
 
+    public void setQuality(int quality) {
+        this.quality = quality;
+    }
+
     public void save(int days) {
         int normalReduceValue;
         int doubleReduceValue = 0;

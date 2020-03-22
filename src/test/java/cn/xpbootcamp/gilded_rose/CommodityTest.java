@@ -25,4 +25,14 @@ public class CommodityTest {
         commodity.save(days);
         assertEquals(0, commodity.getQuality());
     }
+
+    @Test
+    void should_aged_brie_value_no_more_than_50_when_increasing() {
+        int shelfLife = 3;
+        int quality = 10;
+        int days = 50;
+        AgedBrie agedBrie = new AgedBrie(shelfLife, quality);
+        agedBrie.save(days);
+        assertEquals(50, agedBrie.getQuality());
+    }
 }
